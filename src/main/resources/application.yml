@@ -1,0 +1,26 @@
+dubbo:
+    cloud:
+        subscribed-services: springboot-template
+    protocol:
+        id: dubbo
+        name: dubbo
+        port: -1
+    scan:
+        base-packages: com.szy.springboottemplate
+        
+server:
+    port: 8080
+
+spring:
+    application:
+        name: springboot-template
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        name: defaultDataSource
+        password: '***'
+        url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
+        username: '***'
+    mvc:
+        throw-exception-if-no-handler-found: true
+    resources:
+        add-mappings: false
