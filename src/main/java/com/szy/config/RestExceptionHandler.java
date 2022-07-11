@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class RestExceptionHandler {
     /**
      * 默认全局异常处理。
-     * @param e the e
+     * @param e 异常
      * @return ResultData
      */
     @ExceptionHandler(Exception.class)
