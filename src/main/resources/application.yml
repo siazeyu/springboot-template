@@ -1,25 +1,19 @@
-dubbo:
-    cloud:
-        subscribed-services: springboot-template
-    protocol:
-        id: dubbo
-        name: dubbo
-        port: -1
-    scan:
-        base-packages: com.szy.springboottemplate
-        
+# 启动端口
 server:
     port: 8080
 
 spring:
     application:
+        # 应用名
         name: springboot-template
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         name: defaultDataSource
+        # 数据库账号密码
+        username: '***'
         password: '***'
         url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
-        username: '***'
+        # 将404等错误直接抛出异常处理
     mvc:
         throw-exception-if-no-handler-found: true
     resources:
