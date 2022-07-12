@@ -19,3 +19,8 @@ spring:
         # 取消了资源映射，无法映射静态资源比如html、js、css等文件，如有需要请手动配置WebMvcConfigurer
     resources:
         add-mappings: false
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+logging:
+    file:
+        name: ./logs/${spring.application.name}.log
