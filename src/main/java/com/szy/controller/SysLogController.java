@@ -1,5 +1,10 @@
 package com.szy.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.szy.entity.SysLog;
+import com.szy.service.ISysLogService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,5 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys-log")
 public class SysLogController {
+
+    @Autowired
+    ISysLogService sysLogService;
+
+    @GetMapping
+    Page<SysLog> getSysLogs(Integer current){
+        Page<SysLog> page = new Page<>(current == null ? 1 : current,5);
+        return sysLogService.page(page);
+    }
 
 }
