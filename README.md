@@ -5,6 +5,7 @@
 + 默认包config、controller、mapper、pojo、service、util
 + 统一返回数据和异常处理
 + 自定义日志注解
++ Swagger模板
 
 
 # 即将完成的功能
@@ -15,7 +16,6 @@
 + MQ模板
 + Dubbo模板
 + Mybatis-plus模板
-+ Swagger模板
 + Redis模板
 + 优雅启动/停止服务模板
 + 更多功能请关注
