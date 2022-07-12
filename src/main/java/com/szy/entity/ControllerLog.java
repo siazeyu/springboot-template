@@ -1,4 +1,4 @@
-package com.szy.entity.system;
+package com.szy.entity;
 
 import lombok.Data;
 
