@@ -1,7 +1,7 @@
 package com.szy.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.szy.pojo.system.ResultData;
+import com.szy.entity.system.ResultData;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;

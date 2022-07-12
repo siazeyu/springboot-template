@@ -1,4 +1,4 @@
-package com.szy.pojo.system;
+package com.szy.entity.system;
 
 public enum ReturnCode {
     /**操作成功**/

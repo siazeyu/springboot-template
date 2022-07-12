@@ -1,7 +1,7 @@
 package com.szy.config.exception.handle;
 
-import com.szy.pojo.system.ResultData;
-import com.szy.pojo.system.ReturnCode;
+import com.szy.entity.system.ResultData;
+import com.szy.entity.system.ReturnCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

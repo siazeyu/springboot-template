@@ -1,4 +1,4 @@
-package com.szy.pojo.system;
+package com.szy.entity.system;
 
 import lombok.Data;
 
@@ -30,6 +30,6 @@ public class ControllerLog {
     private String errMsg;
 
     // 返回值
-    private Object data;
+    private String data;
 
 }
