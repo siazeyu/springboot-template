@@ -14,9 +14,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
  * 同意格式优化
+ * ResponseBodyAdvice 设置basePackages避免使swagger的返回数据格式化避免Swagger-ui页面无法打开
  */
 
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = {"com.szy.controller"})
 public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @Autowired
@@ -24,6 +25,7 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {
+
         return true;
     }
 
