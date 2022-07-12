@@ -2,7 +2,7 @@ package com.szy.config.aspect;
 
 
 import com.alibaba.fastjson2.JSON;
-import com.szy.entity.ControllerLog;
+import com.szy.entity.SysLog;
 import com.szy.utils.ServletUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysLogAspect {
 
-    @Pointcut("@annotation(com.szy.annotation.SysLog)")
+    @Pointcut("@annotation(com.szy.annotation.WebLog)")
     public void logPrint(){
 
     }
@@ -39,7 +39,7 @@ public class SysLogAspect {
 
         try
         {
-            ControllerLog sysLog = new ControllerLog();
+            SysLog sysLog = new SysLog();
             // 获取当前的用户
             // 请求的地址
             String ip = ServletUtils.getIpRequestAddress();
@@ -53,7 +53,7 @@ public class SysLogAspect {
                 sysLog.setErrMsg(e.getClass().getName() + " : " + e.getMessage());
             }else {
                 sysLog.setStatus(true);
-                sysLog.setData(jsonResult);
+                sysLog.setData(jsonResult.toString());
             }
             // 设置方法名称
             String className = joinPoint.getTarget().getClass().getName();
