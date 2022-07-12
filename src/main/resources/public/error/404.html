@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+<h1>404</h1>
+<h3 id="timer">3秒后返回主页。</h3>
+<h3><a href="/">主页</a> </h3>
+<script>
+    var second = 2;
+  setInterval(function (){
+      if (second === 0){
+          location.href = '/'
+      }
+      document.getElementById("timer").innerText = second + "秒后返回主页。"
+      second--
+  },1000)
+</script>
+</body>
+</html>
