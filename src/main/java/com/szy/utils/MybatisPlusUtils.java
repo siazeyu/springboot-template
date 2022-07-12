@@ -15,14 +15,14 @@ public class MybatisPlusUtils {
         FastAutoGenerator.create(new DataSourceConfig.Builder("jdbc:mysql://127.0.0.1:3306/blue?serverTimezone=UTC","root","123456"))
                 // 全局配置
                 .globalConfig((scanner, builder) -> {
-                    builder.author(scanner.apply("请输入作者名称？")).fileOverride();
-                    builder.outputDir(System.getenv("user.dir") + "/src/main/java")
+                    builder.author("Siaze").fileOverride();
+                    builder.outputDir(System.getProperty("user.dir") + "/src/main/java")
                             .enableSwagger();
                 })
                 // 包配置
                 .packageConfig((scanner, builder) -> {
-                    builder.parent(scanner.apply("请输入包名？"));
-                    //.pathInfo(Collections.singletonMap(OutputFile.xml, "D://"));
+                    builder.parent("com.szy")
+                    .pathInfo(Collections.singletonMap(OutputFile.xml, System.getProperty("user.dir") + "/src/main/resources/xml"));
                 })
                 // 策略配置
                 .strategyConfig((scanner, builder) -> builder.addInclude(getTables(scanner.apply("请输入表名，多个英文逗号分隔？所有输入 all")))
