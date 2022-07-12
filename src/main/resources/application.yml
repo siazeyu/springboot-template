@@ -10,8 +10,8 @@ spring:
         driver-class-name: com.mysql.cj.jdbc.Driver
         name: defaultDataSource
         # 数据库账号密码
-        username: '***'
-        password: '***'
+        username: 'blue'
+        password: '123123'
         url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
         # 将404等错误直接抛出异常处理
     mvc:

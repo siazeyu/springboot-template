@@ -42,6 +42,18 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.4.2</version>
         </dependency>
+<!--        mybatis-plus代码生成器-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.3</version>
+        </dependency>
 
 <!--        mysql驱动-->
         <dependency>
@@ -64,7 +76,7 @@
             <version>2.0.7</version>
         </dependency>
 
-<!--        swager接口测试-->
+<!--        swagger接口测试-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
@@ -83,6 +95,7 @@
             </exclusions>
         </dependency>
     </dependencies>
+
 
     <dependencyManagement>
         <dependencies>
