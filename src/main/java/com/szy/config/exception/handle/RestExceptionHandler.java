@@ -1,4 +1,4 @@
-package com.szy.config;
+package com.szy.config.exception.handle;
 
 import com.szy.pojo.system.ResultData;
 import com.szy.pojo.system.ReturnCode;

@@ -1,4 +1,4 @@
-package com.szy.config;
+package com.szy.config.aspect;
 
 
 import com.alibaba.fastjson2.JSON;
