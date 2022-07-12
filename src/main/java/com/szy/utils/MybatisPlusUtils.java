@@ -22,7 +22,7 @@ public class MybatisPlusUtils {
                 // 包配置
                 .packageConfig((scanner, builder) -> {
                     builder.parent("com.szy")
-                    .pathInfo(Collections.singletonMap(OutputFile.xml, System.getProperty("user.dir") + "/src/main/resources/xml"));
+                    .pathInfo(Collections.singletonMap(OutputFile.xml, System.getProperty("user.dir") + "/src/main/resources/mapper"));
                 })
                 // 策略配置
                 .strategyConfig((scanner, builder) -> builder.addInclude(getTables(scanner.apply("请输入表名，多个英文逗号分隔？所有输入 all")))
