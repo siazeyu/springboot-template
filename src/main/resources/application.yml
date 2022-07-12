@@ -21,6 +21,13 @@ spring:
         add-mappings: false
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
+
+
 logging:
     file:
+        # 日志输出目录
         name: ./logs/${spring.application.name}.log
+
+mybatis-plus:
+  configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

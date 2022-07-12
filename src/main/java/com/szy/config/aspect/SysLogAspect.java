@@ -3,16 +3,21 @@ package com.szy.config.aspect;
 
 import com.alibaba.fastjson2.JSON;
 import com.szy.entity.SysLog;
+import com.szy.service.ISysLogService;
 import com.szy.utils.ServletUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Aspect
 @Component
 public class SysLogAspect {
+
+    @Autowired
+    ISysLogService iSysLogService;
 
     @Pointcut("@annotation(com.szy.annotation.WebLog)")
     public void logPrint(){
@@ -23,14 +28,12 @@ public class SysLogAspect {
 
     @AfterReturning(pointcut = "logPrint()", returning = "object")
     public void doAfterReturning(JoinPoint joinPoint, final Object object){
-//        log.info("return: {}", object);
         handleLog(joinPoint, null, object);
     }
 
 
     @AfterThrowing(pointcut = "logPrint()", throwing = "e")
     public void doThrow(JoinPoint joinPoint, Throwable e){
-//        log.error("error: {} {}", e.getClass().getName(), e.getMessage());
         handleLog(joinPoint, e, null);
     }
 
@@ -65,7 +68,7 @@ public class SysLogAspect {
             sysLog.setParams(ServletUtils.getRequestParams());
             log.info(JSON.toJSONString(sysLog));
             // 保存数据库
-
+            iSysLogService.save(sysLog);
         }
         catch (Exception exp)
         {
