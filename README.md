@@ -20,6 +20,12 @@
 + 优雅启动/停止服务模板
 + 更多功能请关注
 
+# 版本关系
++ springboot 2.3.7.RELEASE
++ Mysql 8.0
++ Swagger 3.0.0
++ nacos 1.3.2
+
 
 # 本模板参考了以下项目
 + [若依](https://gitee.com/y_project/RuoYi-Vue)

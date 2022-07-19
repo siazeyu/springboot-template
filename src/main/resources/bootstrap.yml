@@ -1,0 +1,22 @@
+spring:
+
+  application:
+    # 应用名
+    name: springboot-template
+
+  cloud:
+    nacos:
+      config:
+        namespace: public
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        # nacos组
+        group: app
+        # 配置中心文件后缀名
+        file-extension: yaml
+
+# nacos心跳不打印
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

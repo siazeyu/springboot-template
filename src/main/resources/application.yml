@@ -3,9 +3,6 @@ server:
     port: 8081
 
 spring:
-    application:
-        # 应用名
-        name: springboot-template
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         name: defaultDataSource
@@ -24,13 +21,11 @@ spring:
     cloud:
         nacos:
             discovery:
-                namespace: 2a051b97-be82-4dcb-903f-0a39e5650a38
+                namespace: public
                 server-addr: localhost:8848
                 username: nacos
                 password: nacos
                 group: app
-
-
 
 logging:
     file:
