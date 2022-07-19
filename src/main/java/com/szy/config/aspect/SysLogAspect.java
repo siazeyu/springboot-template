@@ -56,7 +56,8 @@ public class SysLogAspect {
                 sysLog.setErrMsg(e.getClass().getName() + " : " + e.getMessage());
             }else {
                 sysLog.setStatus(true);
-                sysLog.setData(jsonResult.toString());
+
+                sysLog.setData(jsonResult == null ? null : jsonResult.toString());
             }
             // 设置方法名称
             String className = joinPoint.getTarget().getClass().getName();
@@ -73,7 +74,6 @@ public class SysLogAspect {
         catch (Exception exp)
         {
             // 记录本地异常日志
-            log.error("==前置通知异常==");
             log.error("异常信息:{}", exp.getMessage());
             exp.printStackTrace();
         }
