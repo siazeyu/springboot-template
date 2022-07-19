@@ -1,11 +1,11 @@
 spring:
-
   application:
     # 应用名
     name: springboot-template
 
   cloud:
     nacos:
+      # nacos配置中心
       config:
         namespace: public
         server-addr: localhost:8848

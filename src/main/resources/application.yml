@@ -17,9 +17,11 @@ spring:
     resources:
         add-mappings: false
     jackson:
+        # 日期格式化
         date-format: yyyy-MM-dd HH:mm:ss
     cloud:
         nacos:
+            # 服务发现配置
             discovery:
                 namespace: public
                 server-addr: localhost:8848
@@ -27,11 +29,31 @@ spring:
                 password: nacos
                 group: app
 
+
+
+# dubbo 配置
+dubbo:
+    application:
+        name: ${spring.application.name}
+    registry:
+        # 注册地址
+        address: nacos://localhost:8848
+        username: nacos
+        password: nacos
+        # 其他参数
+        parameters:
+            namespace: public
+    protocol:
+        name: dubbo
+        port: 20880
+
+
 logging:
     file:
         # 日志输出目录
         name: ./logs/${spring.application.name}.log
 
+# mybatis-plus日志
 mybatis-plus:
   configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
