@@ -2,8 +2,10 @@ package com.szy.controller;
 
 
 import com.szy.annotation.WebLog;
+import com.szy.service.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 // 从那nacos获取配置文件
 @RefreshScope
 public class TestController {
+
+    @DubboReference
+    TestService testService;
 
     @Value("${myConfig}")
     private String myConfig;
@@ -39,4 +44,12 @@ public class TestController {
     public String nacos(){
         return myConfig;
     }
+
+
+    @GetMapping("/dub")
+    @Operation(summary = "nacos配置测试")
+    public String dubbo(){
+        return testService.print("spring-template");
+    }
+
 }

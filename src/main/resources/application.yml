@@ -25,8 +25,8 @@ spring:
             discovery:
                 namespace: public
                 server-addr: localhost:8848
-                username: nacos
-                password: nacos
+#                username: nacos
+#                password: nacos
                 group: app
 
 
@@ -38,8 +38,8 @@ dubbo:
     registry:
         # 注册地址
         address: nacos://localhost:8848
-        username: nacos
-        password: nacos
+#        username: nacos
+#        password: 123456
         # 其他参数
         parameters:
             namespace: public

@@ -10,7 +10,7 @@ spring:
         namespace: public
         server-addr: localhost:8848
         username: nacos
-        password: nacos
+        password: 123456
         # nacos组
         group: app
         # 配置中心文件后缀名
