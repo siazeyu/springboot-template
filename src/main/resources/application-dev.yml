@@ -23,8 +23,11 @@ spring:
         # username: nacos
         # password: nacos
         group: app
-
-
+  # redis
+  redis:
+    host: localhost
+    port: 6379
+    # password: 123456
 
 
 # dubbo 配置

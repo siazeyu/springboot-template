@@ -94,7 +94,6 @@
         </dependency>
 
 
-        <!--nacos注册中心-->
 
 
 <!--        dubbo-->
@@ -104,10 +103,20 @@
             <version>2.7.7</version>
         </dependency>
 
+
+        <!--dubbo - nacos注册中心-->
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>2.7.7</version>
+        </dependency>
+
+<!--        redis       -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.3.12.RELEASE</version>
         </dependency>
 
 
