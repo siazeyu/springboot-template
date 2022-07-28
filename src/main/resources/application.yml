@@ -2,62 +2,28 @@
 server:
     port: 8081
 
-spring:
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        name: defaultDataSource
-        # 数据库账号密码
-        username: 'blue'
-        password: '123123'
-        url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
-        # 将404等错误直接抛出异常处理
-    mvc:
-        throw-exception-if-no-handler-found: true
-        # 取消了资源映射，无法映射静态资源比如html、js、css等文件，如有需要请手动配置WebMvcConfigurer
-    resources:
-        add-mappings: false
-    jackson:
-        # 日期格式化
-        date-format: yyyy-MM-dd HH:mm:ss
-    cloud:
-        nacos:
-            # 服务发现配置
-            discovery:
-                namespace: public
-                server-addr: localhost:8848
-#                username: nacos
-#                password: nacos
-                group: app
-
-
-
-# dubbo 配置
-dubbo:
-    application:
-        name: ${spring.application.name}
-    registry:
-        # 注册地址
-        address: nacos://localhost:8848
-#        username: nacos
-#        password: 123456
-        # 其他参数
-        parameters:
-            namespace: public
-    protocol:
-        name: dubbo
-        port: 20880
-
-
 logging:
     file:
         # 日志输出目录
         name: ./logs/${spring.application.name}.log
-        # 配置日志输出级别
-        level:
-            com:
-                szy: debug
 
 # mybatis-plus日志
 mybatis-plus:
   configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+# 选择配置文件
+spring:
+    profiles:
+        active: dev
+
+    # 将404等错误直接抛出异常处理
+    mvc:
+        throw-exception-if-no-handler-found: true
+    # 取消了资源映射，无法映射静态资源比如html、js、css等文件，如有需要请手动配置WebMvcConfigurer
+    resources:
+        add-mappings: false
+    jackson:
+        # 日期格式化
+        date-format: yyyy-MM-dd HH:mm:ss
