@@ -52,6 +52,10 @@ logging:
     file:
         # 日志输出目录
         name: ./logs/${spring.application.name}.log
+        # 配置日志输出级别
+        level:
+            com:
+                szy: debug
 
 # mybatis-plus日志
 mybatis-plus:
