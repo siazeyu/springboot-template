@@ -20,8 +20,8 @@ spring:
       discovery:
         namespace: public
         server-addr: localhost:8848
-        #                username: nacos
-        #                password: nacos
+        # username: nacos
+        # password: nacos
         group: app
 
 
