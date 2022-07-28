@@ -42,3 +42,12 @@ dubbo:
   protocol:
     name: dubbo
     port: 20880
+
+
+# swagger开关
+springfox:
+  documentation:
+    enabled: false
+    auto-startup: false
+    swagger-ui:
+      enabled: false
