@@ -1,11 +1,15 @@
 package com.szy.springboottemplate;
 
+import com.alibaba.fastjson.JSON;
+import com.szy.entity.SysLog;
 import com.szy.entity.system.ResultData;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import java.util.Date;
 
 @Slf4j
 @SpringBootTest
@@ -30,7 +34,7 @@ class SpringbootTemplateApplicationTests {
 
     @Test
     void redis(){
-        redisTemplate.opsForValue().set("a","Adasf");
-        System.out.println(redisTemplate.opsForValue().get("a"));
+        SysLog a = (SysLog) redisTemplate.opsForValue().get("a");
+        System.out.println(JSON.toJSONString(a));
     }
 }

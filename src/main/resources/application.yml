@@ -16,7 +16,7 @@ mybatis-plus:
 # 选择配置文件
 spring:
     profiles:
-        active: dev
+        active: test
 
     # 将404等错误直接抛出异常处理
     mvc:

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Api(tags = "测试接口")
-@RestController
-// 从那nacos获取配置文件
-@RefreshScope
+//@RestController
+//// 从那nacos获取配置文件
+//@RefreshScope
 public class TestController {
 
     @DubboReference
