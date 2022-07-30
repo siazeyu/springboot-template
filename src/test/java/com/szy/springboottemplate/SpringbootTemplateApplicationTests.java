@@ -9,11 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.util.Date;
 
 @Slf4j
 @SpringBootTest
 class SpringbootTemplateApplicationTests {
+
+
 
     @Autowired
     RedisTemplate redisTemplate;
@@ -34,6 +35,9 @@ class SpringbootTemplateApplicationTests {
 
     @Test
     void redis(){
+        SysLog sysLog = new SysLog();
+        sysLog.setMethod("SSS");
+        redisTemplate.opsForValue().set("a", sysLog);
         SysLog a = (SysLog) redisTemplate.opsForValue().get("a");
         System.out.println(JSON.toJSONString(a));
     }
