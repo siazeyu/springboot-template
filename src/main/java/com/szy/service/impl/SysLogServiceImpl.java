@@ -1,5 +1,6 @@
 package com.szy.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.szy.entity.SysLog;
 import com.szy.mapper.SysLogMapper;
 import com.szy.service.ISysLogService;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
  * @since 2022-07-13
  */
 @Service
+@DS("db1")
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements ISysLogService {
 
 }

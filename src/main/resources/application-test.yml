@@ -7,12 +7,24 @@ logging:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    name: defaultDataSource
-    # 数据库账号密码
-    username: 'blue'
-    password: '123123'
-    url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
+    dynamic:
+      primary: db1 #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      datasource:
+        db1:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          name: defaultDataSource
+          # 数据库账号密码
+          username: 'blue'
+          password: '123123'
+          url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
+        db2:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          name: defaultDataSource
+          # 数据库账号密码
+          username: 'test'
+          password: '123123'
+          url: jdbc:mysql://localhost:3306/test_db?serverTimezone=UTC
   # redis
   redis:
     host: localhost
